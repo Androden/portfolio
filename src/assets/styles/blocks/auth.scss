@@ -1,0 +1,80 @@
+.auth__wrapper {
+  background: url('./assets/images/bg/auth.jpg') center center no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.auth-block__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(#fcfcfc, .85);
+  border-radius: 10px;
+  overflow: hidden;
+
+  display: none;
+}
+
+.auth-block__user {
+  position: relative;
+  padding: 40px 70px;
+  .user {
+    position: static;
+    transform: translate(0);
+  }
+
+  .user__name, .user__info {
+    color: $grey;
+  }
+}
+
+.auth-block__socials .socials {
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.auth-block__btn {
+  position: absolute;
+  top: 2%;
+  right: 7%;
+  @include phones{
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+.auth-block__btn-link {
+  display: inline-block;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 30px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  opacity: .7;
+  transition: opacity 1s;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.auth__footer{
+  position: absolute;
+  //display: flex;
+  //justify-content: center;
+  top:90%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  @include phones{
+    span{
+       display: block;
+     }
+  }
+}

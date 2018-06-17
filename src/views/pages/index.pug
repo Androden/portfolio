@@ -1,6 +1,22 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+    .auth-block__content
+            .auth-block__user
+                .user
+                    .user__pic
+                        img(src="./assets/images/hero/user.jpg", alt="Пользователь").user__pic-img
+                    .user__description
+                        .user__name Владимир Астахов
+                        .user__info Личный сайт разработчика
+            .auth-block__socials
+                +socials([['http://vk.com', 'vk'], ['http://gh.com', 'github'], ['http://in.com', 'in']], 'socials_fill_green')
+            .auth-block__nav
+                ul.nav-menu.nav-menu_auth
+                    each link in ['Мои работы', "Обо мне", "Блог"]
+                        li.nav-menu__item.nav-menu__item_auth
+                            a(href="#").nav-menu__link.nav-menu__link_auth= link
+
+    include ../common/login
+    .auth-block__btn
+        a(href="#").auth-block__btn-link Авторизоваться

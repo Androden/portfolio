@@ -1,0 +1,32 @@
+.contacts {
+  width: 380px;
+  text-align: center;
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  opacity: 0.85;
+  padding: 35px 40px;
+}
+
+.contacts__title {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.block-subtitle {
+  color: #455a64;
+  font-weight: 500;
+  padding:0 35px;
+}
+
+.contacts__item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contacts__icon-img{
+  width: 30px;
+  height: 30px;
+  fill: $green;
+}

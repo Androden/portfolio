@@ -1,7 +1,7 @@
 include ./common/_mixins
 
 doctype html
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -9,8 +9,13 @@ html(lang="en")
     title Portfolio | welcome page
     link(rel="stylesheet", href="main.min.css")
   body
-    
+
+  .auth__wrapper
     block content
 
+  footer.auth__footer
+    .auth__footer__text
+      span &copy; Денис Андреев
+      span создано с любовью в LoftSchool | 2018 &copy;
     script(src="bootloader.bundle.js")
     script(src="auth.bundle.js")

@@ -1,0 +1,41 @@
+.slider {
+  //height: 100vh;
+  //min-height: 650px;
+}
+
+.slider__btns {
+  display: flex;
+  justify-content: space-between;
+}
+.slider__btn{
+  width: 50%;
+  position: relative;
+}
+.slider__btn_left{
+  &:after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: red;
+    @include centered();
+  }
+}
+
+.slider__btn_right{
+  &:after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: black;
+    @include centered();
+  }
+}
+
+
+.slider__btn-pic{
+  display: block;
+  max-width: 100%;
+  filter: grayscale(.9);
+}

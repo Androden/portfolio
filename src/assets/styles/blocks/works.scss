@@ -1,0 +1,56 @@
+.works {
+  position: relative;
+  display: flex;
+  background: $beige;
+  justify-content: center;
+
+}
+
+.works__col {
+  min-height: 750px;
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.works__col-left {
+  background: $lightBeige;
+}
+
+.works__col-content {
+  padding: 0 10%;
+}
+
+.works__col__desc-skills {
+  padding: 20px 0;
+  border-top: 1px solid $green;
+  border-bottom: 1px solid $green;
+  color: $green;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.works__col__desc-btn {
+  text-align: center;
+}
+
+.btn_works {
+  position: relative;
+  padding: 15px 20px 15px 50px;
+  background: $green;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/images/icons/sprite.svg#link");
+  }
+}

@@ -1,0 +1,35 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Мои работы';
+
+block content
+  .wrapper
+    include ../common/hero
+    section.section.works-head
+      svg(viewbox="0 0 1000 110" preserveAspectRatio="none").works-head__triangle.works-head__triangle_left
+        polygon(points="0,0 0,110 1000, 110")
+      svg(viewbox="0 0 1000 110" preserveAspectRatio="none").works-head__triangle.works-head__triangle_right
+        polygon(points="0,110 1000,110 1000,0")
+      .section-title(style="background-image: url('./assets/images/work/works_header_bg.png')")
+        | Мои работы
+    section.works
+      .works__col.works__col-left
+        .works__col-content
+          .works__col__desc-title
+            .block-title Сайт школы онлайн образования
+          .works__col__desc-skills
+            | HTML, css, javascript
+          .works__col__desc-btn
+            a(href="#").btn_works Посмотреть сайт
+      .works__col.works__col-right
+        .works__col-content
+         .slider
+          .slider__display
+            img(src="./assets/images/work/my_work.png" alt="Мои работы").slider__display-pic
+          .slider__btns
+            a(href="#").slider__btn.slider__btn_left
+              img(src="./assets/images/work/mockup.jpg" alt="").slider__btn-pic
+            a(href="#").slider__btn.slider__btn_right
+              img(src="./assets/images/work/mockup.jpg" alt="").slider__btn-pic
+    include ../common/reviews

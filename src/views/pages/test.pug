@@ -1,0 +1,53 @@
+- var items = ["one", "two", "three"]
+
+each item, inde in items
+    .wrapper
+        .block= item
+        .index= inde
+        .leng= items.length
+
+- var items2 = ["4", "5", "6"]
+- for (var i = 0; i < items2.length; i++)
+    .wrapper
+        .block= items2[i]
+        .index= i
+        .leng= items.length
+
+while i < items.length
+    .wrapper
+        .block= items2[i]
+        .index= i++
+        .leng= items.length
+
+-
+    var obj = [
+        {
+        link: '<a href="#">ссылка1</a>',
+        title: 'prop1'
+        },{
+        link: '<a href="#">ссылка2</a>',
+        title: 'prop2'
+        },{
+        link: '<a href="#">ссылка3</a>',
+        title: 'prop3'
+        }
+    ]
+
+each value in obj
+    .obj
+        .link Тут будет !{value.link}
+        if value.title === 'prop2'
+            .title(data-title=`${value.title}`) Отработало условие
+        else
+            .title Условие НЕ отработало
+
+each value in obj
+    .obj
+        .link Тут будет !{value.link}
+        case value.title
+            when 'prop1'
+                .title(data-title=`${value.title}`) Case one
+            when 'prop2'
+                title(data-title=`${value.title}`) Case two
+            when 'prop3'
+                title(data-title=`${value.title}`) Case three

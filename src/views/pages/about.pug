@@ -1,10 +1,78 @@
 extends ../main.layout.pug
 
 block variables
-  - var title = 'Обо мне'
+  - var title = 'Обо мне';
 
 block scripts
   script(src='about.bundle.js')
 
 block content
-  h1 Страничка "Обо Мне"  
+  include ../common/hero
+  section.about
+    .about__col.about__col_left
+      svg(viewbox="0 0 1000 110" preserveAspectRatio="none").about__triangle
+        polygon(points="0,0 0,110 1000, 110")
+      .about__col-content
+        .about__col-title
+          .section-title(style="background-image: url('./assets/images/about/about_header.png')")
+            | Обо мне
+        .about
+          .about__pic
+            img(src="./assets/images/about/about.jpg" alt="").about__pic-img
+          .about__title
+            .block-title Кто я
+          .block-text
+            p Я веб разработчик из Кирова. Мне 29 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+
+    .about__col.about__col_right
+      svg(viewbox="0 0 1000 110" preserveAspectRatio="none").about__triangle
+        polygon(points="0,110 1000,110 1000,0")
+      .about__col-content
+        .skills
+          .skills__title
+            .block-title Чем я могу быть вам полезен
+          .about__right-description.text-content
+            p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+          .about__right-content
+            -
+              var skills = [
+              ['Frontend', [['HTML5', 30], ['CSS3', 50], ['JavaScript & jQuery', 70]]],
+              ['Backend', [['PHP', 30], ['mySQL', 50], ['Node.js & npm', 70], ['Mongo.db', 10]]],
+              ['Workflow', [['Git & Github', 30], ['Gulp', 50], ['Bower', 10]]],
+              ]
+
+            ul.skills-list
+              each skillsrow in skills
+                li.skills-list__item.skills-row
+                  .skills-row__title #{skillsrow[0]}
+                  ul.skills-row__list
+                    each skill in skillsrow[1]
+                      li.skills-row__item
+                        figure.skill(data-percents="70")
+                          svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle_above
+                          .skill__title #{skill[0]}
+
+
+  section.map
+    .google-map
+    .map__data
+      .contacts
+        h2.contacts__title
+          .block-title.block-subtitle Контакты
+        address.contacts__data
+          ul.contacts__list
+            -
+              var contacts = [
+              ['skype', 'skype_kdn'],
+              ['envelope', 'astahov@gmail.com'],
+              ['phone', '+7 931 200 93 24'],
+              ['map_marker', 'г.Новосибирск, ул. Инская, д. 5']
+              ]
+            each item in contacts
+              li.contacts__item.contacts-row
+                .contacts-row.contacts__icon
+                  +icon(`${item[0]}`, 'contacts__icon-img')
+                .contacts-row.contacts__title #{item[1]}

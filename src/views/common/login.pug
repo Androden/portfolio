@@ -1,0 +1,33 @@
+.login-block__content
+    .block-title.block-title_form Авторизация
+    .form-auth
+        form(action="#" method="POST").form-auth__form
+            .form-auth__input-block
+                .form-auth__input-row
+                    .form-auth__input-icon
+                        svg.input-icon_svg
+                            use(xlink:href='./assets/images/icons/sprite.svg#login')
+                    input(type="text" placeholder="Логин" name="name").form-auth__input
+                .form-auth__input-row
+                    .form-auth__input-icon
+                        svg.input-icon_svg
+                            use(xlink:href='./assets/images/icons/sprite.svg#password')
+                    input(type="text" placeholder="Пароль" name="name").form-auth__input
+                .form-auth__check-block
+                    .check-block_pseudo-block
+                        input(type="checkbox" name="capcha" id="capcha").form-auth__checkbox
+                        label(for="capcha").check-block_pseudo-elem
+                    label(for="capcha") Я человек
+                .form-auth__radio-block
+                    .radio-block__title Вы точно не робот?
+                    label.form-auth__check-label
+                            input.form-auth__input-radio-btn(type='radio', name='foto', value='да')
+                            span.form-auth__input-radio-btn_styled
+                            span.form-auth__input-radio-btn-text Да
+                    label.form-auth__check-label
+                            input.form-auth__input-radio-btn(type='radio', name='foto', value='нет')
+                            span.form-auth__input-radio-btn_styled
+                            span.form-auth__input-radio-btn-text Нет
+            .form-auth__buttons
+                a(href="#").form-auth__button_link На главную
+                button(type="submit" value="Отправить").form-auth__button_submit Отправить
